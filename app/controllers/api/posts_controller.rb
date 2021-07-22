@@ -29,6 +29,7 @@ class Api::PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.title = params[:title] || @post.title
     @post.body = params[:body] || @post.body
+    @post.image = params[:image] || @post.image
     if @post.save
       render "show.json.jbuilder"
     else
